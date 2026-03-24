@@ -1,0 +1,99 @@
+@-moz-document url(chrome://browser/content/browser.xhtml){
+/* Tabs on bottom */
+/* Ref parts from https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome */
+/* 	Step 1:
+	 	set 'toolkit.legacyUserProfileCustomizations.stylesheets = true' in about:config
+	Step 2:
+	 	figure out current firefox's profile folder in about:support 
+*/
+
+/* reverse the whole window order */
+#main-window body {
+	flex-direction: column-reverse !important;
+}
+
+/* reverse the toolbox order */
+#navigator-toolbox {
+	flex-direction: column-reverse !important;
+}
+
+/* fix the urlbar searchmode switcher position */
+#urlbar-searchmode-switcher {
+	position: static !important;
+}
+
+/* setting the urlbar to be flex for reordering the urlbarView and urlbar input container */
+#urlbar {
+	display: flex !important;
+	flex-direction: column !important;
+	transform: translateY(calc(var(--urlbar-container-height) - 2 * var(--urlbar-padding-block) - 100%));
+	box-shadow: none !important;
+}
+
+/* change the transform of urlbar when click on it, just match the position as unclicked */
+#urlbar[breakout][breakout-extend] {
+	transform: translateY(calc(var(--urlbar-container-height) - var(--urlbar-padding-block) - 100%));
+}
+
+/* no flex grow... */
+#urlbar>* {
+	flex: none;
+}
+
+/* set the urlbar input container order */
+#urlbar .urlbar-input-container {
+	order: 2;
+}
+
+/* set the urlbarView order */
+#urlbar>.urlbarView {
+	order: 1;
+	border-bottom: 1px solid #666;
+}
+
+/* reverse the urlbar results(the search suggestions) order */
+#urlbar-results {
+	display: flex;
+	flex-direction: column-reverse;
+}
+
+/* hide the one offs to switch search engine */
+.search-one-offs {
+	display: none !important;
+}
+
+/* no tab top border as tabs reversed */
+.tab-background {
+	border-top: none !important;
+}
+
+/* hide the border of nav toolbox  */
+#navigator-toolbox::after {
+	border: none;
+}
+
+/* set the tabs behaviors such as tabs height, font size, tab padding, button size */
+#TabsToolbar .tabbrowser-arrowscrollbox,
+#tabbrowser-tabs,
+.tab-stack {
+	min-height: 28px !important;
+}
+
+.tabbrowser-tab {
+	font-size: 80%;
+}
+
+.tab-content {
+	padding: 0 5px;
+}
+
+.tab-close-button .toolbarbutton-icon {
+	width: 12px !important;
+	height: 12px !important;
+}
+
+/* hide the toolbox when fullscreen */
+toolbox[inFullscreen=true] {
+	display: none;
+}
+}
