@@ -13,7 +13,7 @@ decorations = "none"
 size = 10.0
 
 [font.normal]
-family = "FiraCode Nerd Font"
+family = "Maple Mono NR NF CN"
 
 # Key Bindings Configuration
 [[keyboard.bindings]]
