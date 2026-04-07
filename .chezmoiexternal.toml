@@ -19,7 +19,12 @@ exact = true
 stripComponents = 1
 refreshPeriod = "168h"
 
-[".local/share/fonts"]
+[".local/share/fonts/Firacode"]
 type = "archive"
 url = "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/FiraCode.tar.xz"
+include = ["*.ttf"]
+
+[".local/share/fonts/Maple"]
+type = "archive"
+url = "https://github.com/eeepin/maple-font/releases/download/v1775278490/MapleMonoNR-NF-CN.zip"
 include = ["*.ttf"]
