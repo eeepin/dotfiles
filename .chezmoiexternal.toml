@@ -24,7 +24,12 @@ type = "archive"
 url = "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/FiraCode.tar.xz"
 include = ["*.ttf"]
 
-[".local/share/fonts/Maple"]
+[".local/share/fonts/MapleMonoNR-NF-CN"]
 type = "archive"
 url = "https://github.com/eeepin/maple-font/releases/download/v1775278490/MapleMonoNR-NF-CN.zip"
+include = ["*.ttf"]
+
+[".local/share/fonts/MapleMonoNR-NF"]
+type = "archive"
+url = "https://github.com/eeepin/maple-font/releases/download/v1775278490/MapleMonoNR-NF.zip"
 include = ["*.ttf"]
