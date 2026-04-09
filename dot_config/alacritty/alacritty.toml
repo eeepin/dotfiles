@@ -13,7 +13,7 @@ decorations = "none"
 size = 10.0
 
 [font.normal]
-family = "Maple Mono NR NF"
+family = "Maple Mono NR NF CN"
 
 # Key Bindings Configuration
 [[keyboard.bindings]]
