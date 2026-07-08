@@ -17,6 +17,11 @@ family = "Maple Mono NR NF CN"
 
 # Key Bindings Configuration
 [[keyboard.bindings]]
+action = "ToggleViMode"
+key = "Space"
+mods = "Control | Shift"
+
+[[keyboard.bindings]]
 action = "Paste"
 key = "V"
 mods = "Control | Shift"
