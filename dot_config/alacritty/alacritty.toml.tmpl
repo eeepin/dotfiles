@@ -1,3 +1,9 @@
+#   Define $mod for different OS
+{{- $mod := "Control" }}
+{{- if eq .chezmoi.os "darwin" }}
+{{- $mod = "Command" }}
+{{- end }}
+
 # Window Configuration
 [window]
 startup_mode = "Windowed"
@@ -55,6 +61,21 @@ mods = "Super | Control"
 action = "CreateNewWindow"
 key = "N"
 mods = "Super | Control"
+
+[[keyboard.bindings]]
+action = "DecreaseFontSize"
+key = "Minus"
+mods = "{{ $mod }}"
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "Equals"
+mods = "{{ $mod }}"
+
+[[keyboard.bindings]]
+action = "ResetFontSize"
+key = "Key0"
+mods = "{{ $mod }}"
 
 [scrolling]
 history = 500
