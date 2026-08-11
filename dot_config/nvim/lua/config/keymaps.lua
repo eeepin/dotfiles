@@ -35,7 +35,7 @@ map("n", "gcO", "O<esc>Vcx<esc><cmd>normal gcc<cr>fxa<bs>", { desc = "Add Commen
 -- files
 map({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save File" })
 map("n", "<leader>fn", "<cmd>enew<cr>", { desc = "New File" })
-map("n", "<leader>fe", ":lua MiniFiles.open()<CR>", { desc = "Open file explorer" })
+map("n", "<leader>fe", "<CMD>Oil .<CR>", { desc = "Open file explorer" })
 map("n", "<leader>f", ":Pick files<CR>", { desc = "Open file picker" })
 -- location list
 map("n", "<leader>xl", function()
