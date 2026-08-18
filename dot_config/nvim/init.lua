@@ -5,6 +5,14 @@ Dependencies:
 --]]
 
 require("config.options")
+
+-- VSCode owns the UI, completion, LSP, windows, and file navigation. Keep its
+-- Neovim instance lightweight and use VSCode commands for editor actions.
+if vim.g.vscode then
+    require("config.vscode")
+    return
+end
+
 require("config.keymaps")
 require("config.autocmds")
 require("config.colorschema")
