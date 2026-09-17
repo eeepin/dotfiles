@@ -28,11 +28,12 @@
 	flex-direction: column !important;
 	transform: translateY(calc(var(--urlbar-container-height) - 2 * var(--urlbar-padding-block) - 100%));
 	box-shadow: none !important;
+    position: relative !important;
 }
 
 /* change the transform of urlbar when click on it, just match the position as unclicked */
 #urlbar[breakout][breakout-extend] {
-	transform: translateY(calc(var(--urlbar-container-height) - var(--urlbar-padding-block) - 100%));
+	transform: translateY(calc(var(--urlbar-container-height) - 2 * var(--urlbar-padding-block) - 100%));
 }
 
 /* no flex grow... */
@@ -46,9 +47,27 @@
 }
 
 /* set the urlbarView order */
-#urlbar>.urlbarView {
-	order: 1;
-	border-bottom: 1px solid #666;
+#urlbar > .urlbarView:popover-open {
+    position-anchor: --urlbar-anchor !important;
+    position-area: block-start center !important;
+    inset-inline: 0 !important;
+    justify-self: stretch !important;
+}
+
+#urlbar > .urlbarView > .urlbarView-background {
+	inset-block:
+        calc(-1 * var(--urlbarView-joint-background-outset-block))
+        calc(-1 * var(--urlbarView-margin-block) - var(--urlbar-joint-background-overlap)) !important;
+	clip-path: inset(
+        calc(-1 * var(--urlbar-joint-background-shadow-margin))
+        calc(-1 * var(--urlbar-joint-background-shadow-margin))
+        var(--urlbar-joint-background-overlap)
+        calc(-1 * var(--urlbar-joint-background-shadow-margin))
+    ) !important;
+	border-start-start-radius: var(--urlbar-background-border-radius) !important;
+    border-start-end-radius: var(--urlbar-background-border-radius) !important;
+    border-end-start-radius: 0 !important;
+    border-end-end-radius: 0 !important;
 }
 
 /* reverse the urlbar results(the search suggestions) order */
